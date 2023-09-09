@@ -15,9 +15,6 @@ import java.util.List;
 @Builder
 @Table(name = "cliente")
 public class Cliente extends BaseEntidad{
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     private String nombre;
     private String apellido;
     private String telefono;

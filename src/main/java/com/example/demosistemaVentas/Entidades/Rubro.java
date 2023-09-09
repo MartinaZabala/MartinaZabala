@@ -15,9 +15,6 @@ import java.util.List;
 @Builder
 @Table(name = "rubro")
 public class Rubro extends BaseEntidad{
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     private String denominacion;
     // RELACION ONE TO MANY UNIDIRECCIONAL(Rubro-Producto)
     // El Cascadeo propaga las operaciones y orphanRemoval asegura que se elimine la relacionada

@@ -76,15 +76,16 @@ public class DemosistemaVentasApplication {
 				.receta("ookpad.com/ar/recetas/15015271-facturas-rellenas-de-dulce-de-membrillo")
 				.build();
 
+
+		//Relación producto con rubro
+		rubro.agregarProducto(producto1);
+		rubro.agregarProducto(producto2);;
 		//Guardando el objeto rubro a la base de Datos
 		rubroRepository.save(rubro);
 		//Guardar objeto producto a la base de datos
 		productoRepository.save(producto1);
 		productoRepository.save(producto2);
 
-		//Relación producto con rubro
-		rubro.agregarProducto(producto1);
-		rubro.agregarProducto(producto2);;
 
 
 		//Creando detalle de pedido
@@ -114,16 +115,9 @@ public class DemosistemaVentasApplication {
 					.tipoEnvio(TipoEnvio.Delivery)
 					.total(2345.85)
 					.build();
-		pedidoRepository.save(pedido1);
-		pedidoRepository.save(pedido2);
 		//Agregando detalle pedido a pedido
 		pedido1.agregarDetalle(detallePedido1);
 		pedido2.agregarDetalle(detallePedido2);
-
-		//Guardar objeto de detalle pedido
-		detallePedidoRepository.save(detallePedido1);
-		detallePedidoRepository.save(detallePedido2);
-
 		//Creando factura
 		Factura factura1 = Factura.builder()
 				.fecha(new Date(122, 9, 7, 12, 30, 06))
@@ -140,9 +134,6 @@ public class DemosistemaVentasApplication {
 				.total(2000.00)
 				.build();
 
-		//Guardando objeto factura en la base de datos
-		facturaRepository.save(factura1);
-		facturaRepository.save(factura2);
 		//Relación pedido con factura
 		pedido1.setFactura(factura1);
 		pedido2.setFactura(factura2);
@@ -160,9 +151,6 @@ public class DemosistemaVentasApplication {
 				.rol("Cliente")
 				.build();
 
-		//Guardando el objeto usuario a la base de datos
-		usuarioRepository.save(usuario1);
-		usuarioRepository.save(usuario2);
 
 		//Relecionando Usuario con pedido
 		usuario1.agregarPedido(pedido1);
@@ -186,10 +174,6 @@ public class DemosistemaVentasApplication {
 			//Agregando pedido a cliente
 			cliente1.agregarPedido(pedido1);
 			cliente2.agregarPedido(pedido2);
-
-		//Guardando cliente a la base de datps
-		clienteRepository.save(cliente1);
-		clienteRepository.save(cliente2);
 			//Creando domicilio
 			Domicilio domicilio1 = Domicilio.builder()
 					.calle("Carlos Gardel")
@@ -201,9 +185,6 @@ public class DemosistemaVentasApplication {
 					.numero(9879)
 					.localidad("Guaymallén")
 					.build();
-		//Guardar objetos domicilios en base de datos
-		domicilioRepository.save(domicilio1);
-		domicilioRepository.save(domicilio2);
 
 			//Agregando un domicilio a cliente
 			domicilio1.setCliente(cliente1);
@@ -211,6 +192,33 @@ public class DemosistemaVentasApplication {
 			//Agregando un domicilio a producto
 			domicilio1.PedidosDe(pedido1);
 			domicilio2.PedidosDe(pedido2);
+
+
+		//Guardar objetos domicilios en base de datos
+		domicilioRepository.save(domicilio1);
+		domicilioRepository.save(domicilio2);
+
+		//Guardando el objeto usuario a la base de datos
+		usuarioRepository.save(usuario1);
+		usuarioRepository.save(usuario2);
+
+		//Guardando pedido en base de datos
+		pedidoRepository.save(pedido1);
+		pedidoRepository.save(pedido2);
+
+
+		//Guardando cliente a la base de datps
+		clienteRepository.save(cliente1);
+		clienteRepository.save(cliente2);
+
+		//Guardando objeto factura en la base de datos
+		facturaRepository.save(factura1);
+		facturaRepository.save(factura2);
+
+
+		//Guardar objeto de detalle pedido
+		detallePedidoRepository.save(detallePedido1);
+		detallePedidoRepository.save(detallePedido2);
 
 
 		Producto productoRecuperado = productoRepository.findById(producto1.getId()).orElse(null);

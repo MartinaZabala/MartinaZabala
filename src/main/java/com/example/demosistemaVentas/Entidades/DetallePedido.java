@@ -16,9 +16,6 @@ import java.util.List;
 @Builder
 @Table(name = "detalle_pedido")
 public class DetallePedido extends BaseEntidad {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     private int Cantidad;
     private double subtotal;
 

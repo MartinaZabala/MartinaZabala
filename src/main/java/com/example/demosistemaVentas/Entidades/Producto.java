@@ -18,10 +18,6 @@ import lombok.NoArgsConstructor;
 @Builder
 @Table(name = "Producto")
 public class Producto extends BaseEntidad {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     private TipoProducto tipo;
     private int tiempoEstimadoCocina;
     private String denominacion;

@@ -15,9 +15,6 @@ import java.util.List;
 @Builder
 @Table(name = "domicilio")
 public class Domicilio extends BaseEntidad{
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     private String calle;
     private int numero;
     private String localidad;

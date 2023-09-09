@@ -18,9 +18,6 @@ import java.util.Date;
 @Builder
 @Table(name = "Factura")
 public class Factura extends BaseEntidad{
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     private Date fecha;
     private int numero;
     private double descuento;

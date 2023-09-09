@@ -25,8 +25,6 @@ import java.util.List;
 @Builder
 @Table(name = "pedido")
 public class Pedido extends BaseEntidad {
-
-    private Long id_pedido;
     private String fecha;
     private Estado estado;
     private Date horaEstimadaEntrega;
