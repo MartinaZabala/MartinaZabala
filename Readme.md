@@ -4,7 +4,7 @@
 
 ## Teniendo como base este UML:
 
-![UML]([https://drive.google.com/file/d/1tphQl8d_1Ti4WliQr7AmX_QlDRtc2TAV/view?usp=sharing](https://raw.githubusercontent.com/MartinaZabala/TpPersistencia/d05620281295381b8fe1fdd22dc01e3f7c25557e/Captura%20de%20pantalla%20(261).png))
+![UML](https://raw.githubusercontent.com/MartinaZabala/TpPersistencia/d05620281295381b8fe1fdd22dc01e3f7c25557e/Captura%20de%20pantalla%20(261).png)
 
 
 
